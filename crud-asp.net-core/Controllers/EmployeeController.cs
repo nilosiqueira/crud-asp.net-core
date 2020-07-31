@@ -35,15 +35,14 @@ namespace crud_asp.net_core.Controllers
             }
             return View(objEmp);
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+
         public IActionResult Edit(int? id)
         {
             if(id == null)
             {
                 return NotFound();
             }
-            EmployeeInfo emp = employeeDAL.GetAllEmployeeById(id);
+            EmployeeInfo emp = employeeDAL.GetEmployeeById(id);
             if (emp == null)
             {
                 return NotFound();
@@ -74,7 +73,7 @@ namespace crud_asp.net_core.Controllers
             {
                 return NotFound();
             }
-            EmployeeInfo emp = employeeDAL.GetAllEmployeeById(id);
+            EmployeeInfo emp = employeeDAL.GetEmployeeById(id);
             if (emp == null)
             {
                 return NotFound();
@@ -88,7 +87,7 @@ namespace crud_asp.net_core.Controllers
             {
                 return NotFound();
             }
-            EmployeeInfo emp = employeeDAL.GetAllEmployeeById(id);
+            EmployeeInfo emp = employeeDAL.GetEmployeeById(id);
             if (emp == null)
             {
                 return NotFound();

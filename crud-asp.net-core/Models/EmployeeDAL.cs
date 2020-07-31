@@ -97,14 +97,13 @@ namespace crud_asp.net_core.Models
 
         // Get Employee By ID
 
-        public EmployeeInfo GetAllEmployeeById(int? empId)
+        public EmployeeInfo GetEmployeeById(int? empId)
         {
-
             EmployeeInfo emp = new EmployeeInfo();
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SP_GetAllEmployeeById", con);
+                SqlCommand cmd = new SqlCommand("SP_GetEmployeeById", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@EmpId", empId);
                 con.Open();
