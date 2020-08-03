@@ -42,6 +42,7 @@ namespace crud_asp.net_core.Models
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
+
                 SqlCommand cmd = new SqlCommand("SP_InsertEmployee", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
